@@ -34,6 +34,7 @@ h2,
 h3 {
   color: var(--color-heading);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h1 {
@@ -167,8 +168,16 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   padding: 2rem 3rem;
+  outline: 0;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 
 .btn--primary {
@@ -226,7 +235,7 @@ a {
   border: 1px solid var(--color-border);
   color: var(--color-heading);
   font-size: 2rem;
-  font-weight: lighter;
+  font-weight: normal;
   outline: 0;
   padding: 1rem 3.5rem;
 }
@@ -273,11 +282,19 @@ a {
   color: #fff;
 }
 
+.card--primary .badge--primary {
+  background: #126de4;
+}
+
 .card--secondary .badge--secondary {
   background: #02cdf1;
 }
 
 /* Plans */
+
+.plan{
+  transition: transform .2s ease-out;
+}
 
 .plan__name {
   color: #fff;
@@ -308,6 +325,10 @@ a {
   padding-bottom: 1rem;
 }
 
+.plan--popular {
+  transform:  scale(1.1);
+}
+
 .plan--popular .card__header {
   position: relative;
 }
@@ -320,6 +341,15 @@ a {
   top: -6px;
   right: 5%;
 }
+
+.plan:hover{
+  transform: scale(1.05);
+}
+
+.plan--popular:hover{
+  transform: scale(1.15);
+}
+
 
 /* Media */
 
@@ -490,7 +520,7 @@ a {
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0 0%, 100% 0%, 100% 80%, 0 100%);
+  clip-path: polygon(0 0%, 100% 0%, 100% 85%, 0 100%);
 }
 
 .container {
@@ -498,9 +528,132 @@ a {
   margin: 0 auto;
 }
 
+.blo
+
+/* Navigation bar */
+.nav {
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+
+.nav__item {
+  padding: 0.5rem 2rem; 
+  border-bottom: 1px solid #222;
+}
+
+.nav__item>a {
+  color: #d2d0db;
+  transition: color 0.3s;
+}
+
+.nav__item > a:hover{
+  color: #fff;
+}
+
+.nav__toggler{
+  opacity: 0.5;
+  transition: box-shadow .15s;
+  cursor: pointer;
+}
+
+.nav.collapsible--expended .nav__toggler {
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius: 5px;
+  transition: opacity 0.5s;
+
+}
+
+.nav__brand {
+  transform: translateY(5px);
+}
+
+/* Hero */
+
+.hero {
+  clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0 100%);
+}
+
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image{
+  width: 100%;
+}
+
+/* Domain Block */
+
+.block-domain .input-group{
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+
+.block-domain__prices{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* Plans Block */
+
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+.block-plans .card{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Features */
+.feature {
+  gap: 4rem 2rem;
+  margin: 12rem 0;
+}
+
+.feature:first-of-type{
+  margin-top: 6rem;
+}
+
+.feature__heading{
+  margin: 1rem 0;
+}
+
+.feature__image {
+  width: 100%;
+}
+
+
+
+
 /* ---- MEDIA QUERY 1024PX  -------------------- */
 
 @media screen and (min-width: 1024px) {
+
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
   /* Mobile Typography  */
 
   body {
@@ -546,7 +699,7 @@ a {
 
   /* input */
   .input {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   /* Plans */
@@ -612,5 +765,44 @@ a {
   .callout .btn {
     justify-self: start;
     margin: 0 2rem;
+  }
+
+
+  /* NAVBAR */
+
+  .nav__toggler{
+    display: none;
+  }
+
+  .nav__list {
+
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .nav__item {
+    border: 0;
+  }
+
+  /* Hero */
+
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__content{
+    text-align: left;
+    align-self: center;
+  }
+
+  .block-domain__prices{
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .feature:nth-of-type(even) .feature__content{
+    order: 2;
   }
 }
