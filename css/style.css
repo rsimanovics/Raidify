@@ -402,11 +402,11 @@ a {
   margin-bottom: 0;
 }
 
-.quoote_company {
+.quote_company {
   margin-top: 0;
   color: var(--color-heading);
   opacity: 0.4;
-  font-style: 2rem;
+  font-size: 2rem;
   font-style: normal;
 }
 
