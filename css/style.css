@@ -57,6 +57,7 @@ h3 {
 
 p {
   margin-top: 10px;
+  color: var(--color-body);
 }
 
 /* Links */
@@ -112,6 +113,7 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
+  color: var(--color-heading);
 }
 
 .list-inline .list__item {
@@ -171,9 +173,9 @@ a {
   border-radius: 40px;
   border: 0;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   outline: 0;
   text-transform: uppercase;
   white-space: nowrap;
@@ -247,6 +249,7 @@ a {
 }
 ::placeholder {
   color: #cdcbd7;
+  font-size: 1.4rem;
 }
 
 .input-group {
@@ -259,6 +262,7 @@ a {
   border: 0;
   flex: 1;
   /* padding: 1.5rem 1rem; */
+  width: 0;
 }
 
 .input-group .btn {
@@ -543,9 +547,8 @@ a {
   margin: 0 auto;
 }
 
-.blo
-
 /* Navigation bar */
+
 .nav {
   background: #000;
   display: flex;
@@ -615,13 +618,14 @@ a {
 
 .block-domain__prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
   justify-items: center;
   max-width: 700px;
   margin: 0 auto;
+  color: var(--color-heading);
 }
 
 /* Plans Block */
@@ -750,6 +754,10 @@ a {
 
   /* input */
   .input {
+    font-size: 2rem;
+  }
+
+  .input::placeholder {
     font-size: 2rem;
   }
 
