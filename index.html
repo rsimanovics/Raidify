@@ -18,14 +18,15 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <header>
       <nav class="nav collapsible">
-        <a class="nav__brand" href="/"><img src="images/logo.svg" alt="" /></a>
+        <a class="nav__brand" href="/"
+          ><img src="images/logo.svg" aria-label="Raidify"
+        /></a>
         <svg class="icon icon--white nav__toggler">
           <use href="images/sprite.svg#menu"></use>
         </svg>
@@ -70,6 +71,7 @@
       </header>
       <div class="input-group">
         <input
+          aria-label="Domain"
           class="input"
           type="text"
           placeholder="Enter domain name here..."
